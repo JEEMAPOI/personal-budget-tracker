@@ -1,65 +1,119 @@
- body {
-    font-family: Arial, sans-serif;
+ @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap');
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --background: #eef4ff;
+    --card: #ffffff;
+    --text: #1e293b;
+    --border: #cbd5e1;
+    --table-header: #1e40af;
+    --table-row: #f8fafc;
+    --table-hover: #dbeafe;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
+    padding: 30px;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/* Page heading card */
+#page-header {
+    background-color: var(--card);
+    padding: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+h1,
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-dark);
 }
 
 h1 {
-    text-align: center;
+    margin-bottom: 10px;
 }
 
-#page-header {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    text-align: center;
+h2 {
+    margin-top: 0;
 }
 
+/* Add Expense card */
 .expense-section {
-    background-color: #e8f4ff;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.expenses-section {
-    background-color: #fff3e8;
-    padding: 20px;
-    overflow-x: auto;
-}
-
-.info-section,
-.video-section {
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
+    background-color: var(--card);
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
 }
 
 /* Form styling */
+form {
+    max-width: 500px;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
 input,
 select {
     display: block;
     width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    margin: 8px 0 15px;
-    box-sizing: border-box;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
 }
 
-/* Focus pseudo-class */
 input:focus,
 select:focus {
-    border: 2px solid #333;
+    border: 2px solid var(--primary);
     outline: none;
 }
 
-/* Button styling */
+/* Button */
 button {
-    padding: 10px 20px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
     cursor: pointer;
 }
 
-/* Expense table */
+button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Expense Table card */
+.expenses-section {
+    background-color: var(--card);
+    padding: 25px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow-x: auto;
+}
+
+/* Table */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -67,34 +121,33 @@ table {
 
 th,
 td {
-    border: 1px solid #999;
-    padding: 12px;
+    border: 1px solid var(--border);
+    padding: 14px;
     text-align: left;
 }
 
 th {
-    background-color: #333;
+    background-color: var(--table-header);
     color: white;
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Alternating rows */
-.expenses-section tr:nth-child(even) {
-    background-color: #f2f2f2;
+tr:nth-child(even) {
+    background-color: var(--table-row);
 }
 
-/* Table row hover */
-.expenses-section tbody tr:hover {
-    background-color: #ddd;
+tbody tr:hover {
+    background-color: var(--table-hover);
 }
 
-/* Descendant selector */
-.expenses-section td {
-    font-size: 15px;
-}
-
-/* Negation pseudo-class */
-input:not([type="date"]) {
-    border-radius: 4px;
+/* Other sections */
+.info-section,
+.video-section {
+    background-color: var(--card);
+    padding: 25px;
+    margin-top: 25px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
 }
 
 /* Details */
@@ -104,10 +157,11 @@ details {
 
 summary {
     cursor: pointer;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 /* Video */
 iframe {
     max-width: 100%;
+    border-radius: 8px;
 }
