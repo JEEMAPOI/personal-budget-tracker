@@ -1,4 +1,4 @@
-body {
+ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
@@ -13,6 +13,7 @@ h1 {
     background-color: white;
     padding: 20px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .expense-section {
@@ -24,9 +25,19 @@ h1 {
 .expenses-section {
     background-color: #fff3e8;
     padding: 20px;
+    overflow-x: auto;
 }
 
-input {
+.info-section,
+.video-section {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Form styling */
+input,
+select {
     display: block;
     width: 100%;
     max-width: 400px;
@@ -35,6 +46,68 @@ input {
     box-sizing: border-box;
 }
 
-#no-expenses {
-    font-style: italic;
+/* Focus pseudo-class */
+input:focus,
+select:focus {
+    border: 2px solid #333;
+    outline: none;
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Expense table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #999;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+    color: white;
+}
+
+/* Alternating rows */
+.expenses-section tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Table row hover */
+.expenses-section tbody tr:hover {
+    background-color: #ddd;
+}
+
+/* Descendant selector */
+.expenses-section td {
+    font-size: 15px;
+}
+
+/* Negation pseudo-class */
+input:not([type="date"]) {
+    border-radius: 4px;
+}
+
+/* Details */
+details {
+    margin-top: 10px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Video */
+iframe {
+    max-width: 100%;
 }
